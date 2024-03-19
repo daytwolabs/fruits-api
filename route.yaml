@@ -1,0 +1,15 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: fruits-api
+  labels:
+    name: fruits-api
+spec:
+  to:
+    kind: Service
+    name: fruits-api
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Allow

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fruits-api
+  labels:
+    name: fruits-api
+spec:
+  selector:
+    app: fruits-api
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

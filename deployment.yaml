@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fruits-api
+  labels:
+    name: fruits-api
+spec:
+  selector:
+    matchLabels:
+      app: fruits-api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fruits-api
+    spec:
+      containers:
+        - name: container
+          image: quay.io/daytwo/fruits-api:latest
+          ports:
+            - containerPort: 8080
+              protocol: TCP
